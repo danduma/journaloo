@@ -1,0 +1,10 @@
+{
+    "db_path": "db/journal.db",
+    "vector_path": "index/",
+    "vector_db_provider": "faiss",
+    "text_embedding_model": "BAAI/bge-base-en",
+    "llm_model": "gpt-4",
+    "top_k": 6,
+    "import_path": "data/",
+    "watch_path": false
+}
