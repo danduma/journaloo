@@ -21,11 +21,15 @@ from import_data import import_journal_from
 from config import save_settings, SETTINGS
 
 # import streamlit.components.v1 as components
+import os
+
+if SETTINGS["openai_api_key"]:
+    os.environ["OPENAI_API_KEY"] = SETTINGS["openai_api_key"]
 
 st.set_page_config(
     page_title="📓 memoaire",
     page_icon="📓",
-    layout="wide",
+    layout="centered",
     initial_sidebar_state="collapsed",
 )
 
@@ -99,7 +103,7 @@ def page_settings():
     with data_tab:
         # Form 1
         with st.form(key='existing_index_form'):
-            st.markdown('### Existing index')
+            st.markdown('#### Existing index')
             n_entries = journaldb.count_entries()  # Assuming 10 entries
             st.markdown(f'Currently contains: {n_entries} entries')
 
@@ -113,7 +117,7 @@ def page_settings():
                 st.success('Index deleted!')
         # Form 2
         with st.form(key='form2'):
-            st.markdown('### Import Journal')
+            st.markdown('#### Import Journal')
 
             FORMAT_OPTIONS = ['DayOne JSON', 'DayOne XML', 'Markdown']
             # Tabs
@@ -147,7 +151,14 @@ def page_settings():
 
     with advanced_tab:
         with st.form(key='advanced_form'):
-            st.markdown('### Advanced Settings')
+            st.markdown('#### Advanced Settings')
+
+            # API key
+            if SETTINGS['openai_api_key']:
+                api_key = SETTINGS['openai_api_key']
+            else:
+                api_key = os.environ.get('OPENAI_API_KEY', '')
+            api_key = st.text_input('OpenAI API key', value=api_key)
 
             # Dropdown for LLM model
             llm_model = st.selectbox('LLM model', LLM_OPTIONS, index=LLM_OPTIONS.index(SETTINGS['llm_model']))
@@ -165,7 +176,14 @@ def page_settings():
             # Submit button
             submit_button = st.form_submit_button(label='Submit')
             if submit_button:
-                st.success(f'Selected LLM model: {llm_model}, Embeddings model: {embeddings_model}, Top-k: {top_k}')
+                SETTINGS['openai_api_key'] = api_key
+                SETTINGS['llm_model'] = llm_model
+                SETTINGS['text_embedding_model'] = embeddings_model
+                SETTINGS['top_k'] = top_k
+
+                st.success(f'Selected LLM model: {llm_model}, '
+                           f'Embeddings model: {embeddings_model}, '
+                           f'Top-k: {top_k}')
                 # Add code to handle the selected options
 
 

@@ -38,6 +38,9 @@ def custom_css():
             background-color: var(--secondary-background-color);
           }
 
+        .streamlit-expander {
+            padding: 2px;
+            }
 
            .block-container {
                 padding-top: 1rem;

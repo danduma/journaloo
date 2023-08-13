@@ -11,6 +11,7 @@ DEFAULT_SETTINGS = {
     'import_path': "",
     'import_format': "DayOne XML",
     'watch_path': False,
+    'openai_api_key': "",
 }
 
 
