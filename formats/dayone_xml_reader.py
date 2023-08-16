@@ -6,7 +6,7 @@ from formats.base_reader import BaseReader
 KEYS_TO_IGNORE = ["Region", "Generation Date"]
 
 
-class DayOneXMLConverter(BaseReader):
+class DayOneXMLReader(BaseReader):
     """
     A class for reading Day One XML files to JSON
     """
@@ -91,7 +91,7 @@ def transform_dict(data):
 
 def main():
     # Replace 'file.xml' with the name of your XML file
-    reader = DayOneXMLConverter()
+    reader = DayOneXMLReader()
     for data in reader.read_directory('../data', file_mask='*.doentry'):
         print(json.dumps(data, indent=4))
 

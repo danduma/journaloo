@@ -7,8 +7,8 @@ def import_journal_from(path, format):
     if format == "dayone_json":
         raise NotImplementedError
     elif format == "dayone_xml":
-        from formats.dayone_xml_reader import DayOneXMLConverter
-        converter = DayOneXMLConverter()
+        from formats.dayone_xml_reader import DayOneXMLReader
+        converter = DayOneXMLReader()
         if "." not in path:
             for entry in converter.read_directory(path, '*.doentry'):
                 jdb.add_entry(entry)
