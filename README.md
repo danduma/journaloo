@@ -19,7 +19,7 @@ Talk to your memories with Jippy!
 1. Clone the repository📂
 
 ```bash
-git clone git@github.com:danduma/memoaire.git
+git clone https://github.com/danduma/memoaire.git
 cd memoaire
 ```
 
