@@ -1,15 +1,17 @@
-<h1 align="center">
-📓 Memoaire
-</h1>
+# 📓 Memoaire
 
-Talk to your memories. 
+Talk to your memories with Jippy! 
 
 ## 🔧 Features
 
 - Import your journal in several formats
-    - currently only DayOne XML is supported
-- Find interesting stuff in your journal.
-- Think qualitative rather than quantitative questions for now 
+    - currently supports DayOne XML and JSON
+- Find interesting stuff in your journal!
+- Think qualitative rather than quantitative questions for now, like:
+  - "What did I do last summer?"
+  - "What did I do on my birthday?"
+  - "What did I do on my last vacation in France?"
+  - "What's my favorite movie?"'
 
 ## Installation
 
@@ -46,6 +48,6 @@ This should launch a browser window with the app running.
 ## Getting Started
 
 1. Get your OpenAI API key from [here](https://platform.openai.com/).
-2. In the app, go to Settings and paste your API key.
+2. Go to Settings inside the app and paste it.
 3. Go to the "Journal data" tab and import your journal: select the right format, manually input the path to the directory or file, and click "Import".
 4. Go to the "Chat" tab and start talking to your memories!
