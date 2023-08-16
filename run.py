@@ -30,7 +30,7 @@ st.set_page_config(
     page_title="📓 memoaire",
     page_icon="📓",
     layout="centered",
-    initial_sidebar_state="collapsed",
+    initial_sidebar_state="auto",
 )
 
 configure_ui()

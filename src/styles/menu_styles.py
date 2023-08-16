@@ -28,6 +28,7 @@ HEADER_STYLES: Dict[str, Dict] = {
 
 FOOTER_STYLES: Dict[str, Dict] = {
     "body": {
-        "background-color": "--secondary-background-color",
+        # "background_color": "var(--secondary-background-color)",
+        "background-color": "#444655",
     }
 }

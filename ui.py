@@ -14,9 +14,10 @@ def custom_css():
             --primary-color: #ffffff;
             --background-color: #343542;
             --secondary-background-color: #444655;
-            --bs-body-bg: --secondary-background-color;
+            --bs-body-bg: var(--background-color);
             
             --text-color: #ffffff;
+            # background-color: var(--secondary-background-color);
             # --font: "sans-serif";
           }
 
@@ -30,17 +31,26 @@ def custom_css():
             background-color: var(--secondary-background-color);
           }
           
-          button {
-            background-color: var(--secondary-background-color);
-          }
+          textarea {
+            background-color: var(--background-color);
+            }
 
-          .st-c7 {
+          button.st-c7 {
             background-color: var(--secondary-background-color);
           }
 
         .streamlit-expander {
             padding: 2px;
             }
+            
+        .menu {
+            background-color: var(--secondary-background-color);
+            }
+            
+        .app {
+            background-color: var(--secondary-background-color);
+            }
+            
 
            .block-container {
                 padding-top: 1rem;
