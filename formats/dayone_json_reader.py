@@ -7,6 +7,7 @@ from formats.base_reader import BaseReader
 
 FIELDS_TO_IGNORE = ['richText']
 
+
 class DayOneJSONReader(BaseReader):
     """
     A class for reading Day One zipped JSON files

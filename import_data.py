@@ -5,7 +5,15 @@ def import_journal_from(path, format):
     jdb = JournalDatabase("db/journal.db")
     num_entries = 0
     if format == "dayone_json":
-        raise NotImplementedError
+        from formats.dayone_json_reader import DayOneJSONReader
+        converter = DayOneJSONReader()
+        if "." not in path:
+            for entry in converter.read_directory(path, '*.zip'):
+                jdb.add_entry(entry)
+                num_entries += 1
+        else:
+            for entry in converter.read(path):
+                jdb.add_entry(entry)
     elif format == "dayone_xml":
         from formats.dayone_xml_reader import DayOneXMLReader
         converter = DayOneXMLReader()
