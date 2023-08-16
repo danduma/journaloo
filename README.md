@@ -12,6 +12,7 @@ Talk to your memories with Jippy!
   - "What did I do on my birthday?"
   - "What did I do on my last vacation in France?"
   - "What's my favorite movie?"'
+- Relatively private: your journal data is only indexed locally using offline embeddings. However, every query to gpt-4 is sent to OpenAI's API, and it will include relevant sentences / paragraphs from your journal to answer your query
 
 ## Installation
 
